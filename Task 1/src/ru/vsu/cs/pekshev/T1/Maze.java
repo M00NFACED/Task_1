@@ -142,24 +142,24 @@ class Maze {
             mazeWithSolution[y][x] = path;
             if (mazeWithSolution[y][x + 1] == free) {
                 mazeWithSolution[y][x + 1] = path;
-                x += 1;
+                x++;
                 continue;
             }
             if (mazeWithSolution[y][x - 1] == free) {
                 mazeWithSolution[y][x - 1] = path;
-                x -= 1;
+                x--;
                 continue;
             }
 
             if (mazeWithSolution[y + 1][x] == free) {
                 mazeWithSolution[y + 1][x] = path;
-                y += 1;
+                y++;
                 continue;
             }
 
             if (mazeWithSolution[y - 1][x] == free) {
                 mazeWithSolution[y - 1][x] = path;
-                y -= 1;
+                y--;
                 continue;
             }
             if (mazeWithSolution[y][x + 1] != free && // Если поиск пути не может продолжаться - это тупик,
@@ -170,25 +170,25 @@ class Maze {
 
                 if (mazeWithSolution[y][x + 1] == path) {
                     mazeWithSolution[y][x + 1] = deadEnd;
-                    x += 1;
+                    x++;
                     continue;
                 }
 
                 if (mazeWithSolution[y][x - 1] == path) {
                     mazeWithSolution[y][x - 1] = deadEnd;
-                    x -= 1;
+                    x--;
                     continue;
                 }
 
                 if (mazeWithSolution[y + 1][x] == path) {
                     mazeWithSolution[y + 1][x] = deadEnd;
-                    y += 1;
+                    y++;
                     continue;
                 }
 
                 if (mazeWithSolution[y - 1][x] == path) {
                     mazeWithSolution[y - 1][x] = deadEnd;
-                    y -= 1;
+                    y--;
                 }
             }
         }
